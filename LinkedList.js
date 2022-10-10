@@ -1,13 +1,44 @@
-import Node from './Node.js';
+import { Node } from './Node.js';
 
-export default LinkedList = (function () {
-  function append(value) {}
+export function LinkedList() {
+  let head = null;
+  function append(value) {
+    const node = Node();
+    node.value = value;
+    if (head === null) {
+      head = node;
+    } else {
+      let curr = head;
+      while (curr.nextNode !== null) {
+        curr = curr.nextNode;
+      }
+      curr.nextNode = node;
+    }
+  }
 
-  function prepend(value) {}
+  function prepend(value) {
+    const node = Node();
+    node.value = value;
+    if (size() === 0) {
+      head = node;
+    }
+    if (size() !== 0) {
+      node.nextNode = head;
+      head = node;
+    }
+  }
 
-  function size() {}
+  function size() {
+    let count = 0;
+    let curr = head;
+    while (curr !== null) {
+      count++;
+      curr = curr.nextNode;
+    }
+    return count;
+  }
 
-  function head() {}
+  // function head() {}
 
   function tail() {}
 
@@ -19,9 +50,25 @@ export default LinkedList = (function () {
 
   function find(value) {}
 
-  function toString() {}
+  function toString() {
+    let str = '';
+    let curr = head;
+    while (curr !== null) {
+      str += `( ${curr.value} ) -> `;
+      curr = curr.nextNode;
+    }
+    str += 'null';
+    return str;
+  }
 
   function insertAt(value, index) {}
 
   function removeAt(index) {}
-})();
+
+  return {
+    append,
+    prepend,
+    size,
+    toString,
+  };
+}

@@ -1,6 +1,6 @@
-export default Node = (function () {
+export function Node() {
   return {
     value: null,
-    nexNode: null,
+    nextNode: null,
   };
-})();
+}
