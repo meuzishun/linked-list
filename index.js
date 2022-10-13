@@ -1,6 +1,6 @@
 import { LinkedList } from './LinkedList.js';
 
-const myList = new LinkedList();
+const myList = LinkedList();
 console.log(myList.toString());
 myList.append('Billy');
 myList.append(2);
