@@ -1,14 +1,16 @@
 import { Node } from './Node.js';
 
 function LinkedListProto() {
+  let listHead = null;
+
   return {
     append(value) {
       const node = Node();
       node.value = value;
-      if (this.listHead === null) {
-        this.listHead = node;
+      if (listHead === null) {
+        listHead = node;
       } else {
-        let curr = this.listHead;
+        let curr = listHead;
         while (curr.nextNode !== null) {
           curr = curr.nextNode;
         }
@@ -19,17 +21,17 @@ function LinkedListProto() {
     prepend(value) {
       const node = Node();
       node.value = value;
-      if (this.listHead === null) {
-        this.listHead = node;
+      if (listHead === null) {
+        listHead = node;
       } else {
-        node.nextNode = this.listHead;
-        this.listHead = node;
+        node.nextNode = listHead;
+        listHead = node;
       }
     },
 
     size() {
       let count = 0;
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr !== null) {
         count++;
         curr = curr.nextNode;
@@ -38,11 +40,11 @@ function LinkedListProto() {
     },
 
     head() {
-      return this.listHead;
+      return listHead;
     },
 
     tail() {
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr.nextNode !== null) {
         curr = curr.nextNode;
       }
@@ -50,7 +52,7 @@ function LinkedListProto() {
     },
 
     at(index) {
-      let curr = this.listHead;
+      let curr = listHead;
       let i = 0;
       while (i < index) {
         i++;
@@ -60,7 +62,7 @@ function LinkedListProto() {
     },
 
     pop() {
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr.nextNode.nextNode !== null) {
         curr = curr.nextNode;
       }
@@ -68,7 +70,7 @@ function LinkedListProto() {
     },
 
     contains(value) {
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr !== null) {
         if (curr.value === value) return true;
         curr = curr.nextNode;
@@ -78,7 +80,7 @@ function LinkedListProto() {
 
     find(value) {
       let i = 0;
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr !== null) {
         if (curr.value === value) return i;
         i++;
@@ -89,7 +91,7 @@ function LinkedListProto() {
 
     toString() {
       let str = '';
-      let curr = this.listHead;
+      let curr = listHead;
       while (curr !== null) {
         str += `( ${curr.value} ) -> `;
         curr = curr.nextNode;
@@ -101,7 +103,7 @@ function LinkedListProto() {
     insertAt(value, index) {
       const node = Node();
       node.value = value;
-      let curr = this.listHead;
+      let curr = listHead;
       let i = 0;
       while (i < index - 1) {
         curr = curr.nextNode;
@@ -112,7 +114,7 @@ function LinkedListProto() {
     },
 
     removeAt(index) {
-      let curr = this.listHead;
+      let curr = listHead;
       let i = 0;
       while (i < index - 1) {
         curr = curr.nextNode;
@@ -125,8 +127,7 @@ function LinkedListProto() {
 
 export function LinkedList() {
   const prototype = LinkedListProto();
-  let listHead = null;
-  return Object.assign({}, prototype, { listHead });
+  return Object.assign({}, prototype);
 }
 
 // export class LinkedList {
