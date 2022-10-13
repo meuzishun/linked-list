@@ -20,3 +20,6 @@ myList.insertAt('Car', 2);
 console.log(myList.toString());
 myList.removeAt(4);
 console.log(myList.toString());
+
+const myList2 = LinkedList();
+console.log(myList2.toString());
