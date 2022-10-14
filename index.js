@@ -1,4 +1,7 @@
-import { LinkedList } from './LinkedList.js';
+// import { LinkedList } from './LinkedList.js';
+import { LinkedListConstructor } from './LinkedListConstructor.js';
+import { LinkedListClass } from './LinkedListClass.js';
+import { LinkedListFactory } from './LinkedListFactory.js';
 
 const myList = LinkedList();
 console.log(myList.toString());
