@@ -22,3 +22,10 @@ myClassList.append(456);
 console.log(myClassList.toString());
 
 const myFactoryList = LinkedListFactory();
+console.log(myFactoryList);
+myFactoryList.append('Billy Boy');
+myFactoryList.append(500);
+myFactoryList.append(420);
+myFactoryList.prepend('Drew');
+myFactoryList.append(789);
+console.log(myFactoryList.toString());
