@@ -1,4 +1,3 @@
-// import { LinkedList } from './LinkedList.js';
 import { LinkedListConstructor } from './LinkedListConstructor.js';
 import { LinkedListClass } from './LinkedListClass.js';
 import { LinkedListFactory } from './LinkedListFactory.js';
