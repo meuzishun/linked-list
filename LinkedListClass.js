@@ -8,7 +8,7 @@ export class LinkedListClass {
   append(value) {
     const node = Node();
     node.value = value;
-    if (this.this.listHead === null) {
+    if (this.listHead === null) {
       this.listHead = node;
     } else {
       let curr = this.listHead;
