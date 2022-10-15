@@ -1,8 +1,6 @@
 import { Node } from './Node.js';
 
 const LinkedListProto = {
-  listHead: null,
-
   append(value) {
     const node = Node();
     node.value = value;
@@ -124,5 +122,5 @@ const LinkedListProto = {
 };
 
 export function LinkedListFactory() {
-  return Object.assign({}, LinkedListProto);
+  return Object.assign(Object.create(LinkedListProto), { listHead: null });
 }
